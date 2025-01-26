@@ -1,4 +1,3 @@
-// app/page.js
 'use client';
 
 import 'swiper/css';
@@ -11,13 +10,13 @@ import Image from 'next/image';
 
 export default function ImageSlider() {
   const images = [
-    '/image-slider/1.jpg',
-    '/image-slider/2.jpg',
-    '/image-slider/3.jpg',
+    '/image-slider/car-1.png',
+    '/image-slider/car-2.png',
+    '/image-slider/car-3.png',
   ];
 
   return (
-    <div className="w-screen h-screen">
+    <div className="w-full h-[50vh] md:h-[70vh] lg:h-screen">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={0}
@@ -35,11 +34,11 @@ export default function ImageSlider() {
                 alt={`Slide ${index + 1}`}
                 fill
                 style={{ objectFit: 'cover' }}
-                priority={index === 0} 
+                priority={index === 0}
               />
             </div>
           </SwiperSlide>
-        ))}   
+        ))}
       </Swiper>
     </div>
   );

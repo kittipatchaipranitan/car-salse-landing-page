@@ -1,8 +1,8 @@
-import { FaPhoneAlt, FaEnvelope, FaFacebook, FaYoutube } from "react-icons/fa";
+import { FaPhoneAlt, FaEnvelope, FaFacebook } from "react-icons/fa";
 
 const Header = () => {
   return (
-    <header className="bg-black text-white">
+    <header className="bg-black text-white hidden md:flex">
       <div className="container mx-auto flex justify-between items-center p-3">
         {/* Contact Info */}
         <div className="flex space-x-6">
@@ -20,15 +20,14 @@ const Header = () => {
         {/* Social Media Links */}
         <div className="flex space-x-4">
           {[
-            { href: "https://facebook.com/carsales", label: "Facebook", icon: <FaFacebook /> },
-            { href: "https://youtube.com/carsales", label: "YouTube", icon: <FaYoutube /> },
+            { href: "#facebook", label: "Facebook", icon: <FaFacebook /> },
           ].map((link, index) => (
             <a
               key={index}
               href={link.href}
-              target="_blank"
+              // target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center space-x-2 hover:text-green-400"
+              className="flex items-center space-x-2 hover:text-red-500"
             >
               <span>{link.icon}</span>
               <span>{link.label}</span>

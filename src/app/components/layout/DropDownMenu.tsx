@@ -4,7 +4,7 @@ import { FiChevronDown } from 'react-icons/fi';
 // Define the props interface
 interface DropdownMenuProps {
   label: string;
-  menuItems: string[]; 
+  menuItems: string[];
 }
 
 const DropdownMenu: React.FC<DropdownMenuProps> = ({ label, menuItems }) => {
@@ -20,17 +20,17 @@ const DropdownMenu: React.FC<DropdownMenuProps> = ({ label, menuItems }) => {
       </button>
 
       <div
-        className="absolute hidden group-hover:block bg-white shadow-md mt-2 w-64 rounded-md border border-gray-200 z-10"
+        className="absolute hidden group-hover:block bg-white shadow-md  w-64 rounded-md border border-gray-200 z-10"
         role="menu"
       >
         <ul className="py-2">
           {menuItems.map((item, index) => (
             <li key={index} role="menuitem">
-              <button
-                className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100"
+              <a href={'#' + item}
+                className="block w-full text-left px-4 py-2 text-gray-700 hover:bg-black hover:text-red-500"
               >
                 {item}
-              </button>
+              </a>
             </li>
           ))}
         </ul>

@@ -1,69 +1,86 @@
 import React from "react";
-import { MdArrowForward } from "react-icons/md";
+import {
+  MdArrowForward,
+  MdCarRepair,
+  MdElectricCar,
+  MdLocalCarWash,
+  MdOutlineSpeed,
+  MdDirectionsCar,
+  MdSettings,
+} from "react-icons/md";
 
 function OurProduct() {
   const ourProductList = [
     {
-      title: "Lorem ipsum dolor sit.",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, mollitia.",
+      title: "SUVs for Every Journey",
+      description: "Explore our wide range of SUVs designed for comfort and adventure.",
+      icon: <MdDirectionsCar size={40} />,
     },
     {
-      title: "Lorem ipsum dolor sit.",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, mollitia.",
+      title: "Electric Vehicles",
+      description: "Experience the future of driving with our eco-friendly electric cars.",
+      icon: <MdElectricCar size={40} />,
     },
     {
-      title: "Lorem ipsum dolor sit.",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, mollitia.",
+      title: "Car Repairs & Maintenance",
+      description: "Keep your vehicle in top shape with our expert repair services.",
+      icon: <MdCarRepair size={40} />,
     },
     {
-      title: "Lorem ipsum dolor sit.",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, mollitia.",
+      title: "High-Performance Cars",
+      description: "Unleash the thrill with our range of high-performance sports cars.",
+      icon: <MdOutlineSpeed size={40} />,
     },
     {
-      title: "Lorem ipsum dolor sit.",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, mollitia.",
+      title: "Car Wash Services",
+      description: "Get your car sparkling clean with our professional car wash services.",
+      icon: <MdLocalCarWash size={40} />,
     },
     {
-      title: "Lorem ipsum dolor sit.",
-      description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione, mollitia.",
+      title: "Customizations & Upgrades",
+      description: "Personalize your vehicle with our custom upgrades and accessories.",
+      icon: <MdSettings size={40} />,
     },
   ];
 
   return (
-    <div className="bg-[url('/logo/3.png')] bg-cover bg-center min-h-screen">
-
-      <div className="container mx-auto space-y-16 py-16">
+    <div className="bg-[url('/logo/3.png')] bg-cover bg-center bg-gray-800/50 min-h-full py-16">
+      <div className="container mx-auto px-4 sm:px-8 lg:px-16 space-y-16">
         {/* Heading Section */}
-        <div className="text-center space-y-8">
-          <h2 className="font-semibold text-white">OUR PRODUCTS</h2>
-          <h1 className="font-bold text-red-500 text-5xl">PRODUCT FEATURES</h1>
+        <div className="text-center space-y-4">
+          <h2 className="font-semibold text-white text-lg sm:text-xl">OUR PRODUCTS</h2>
+          <h1 className="font-bold text-red-500 text-3xl sm:text-5xl">PRODUCT FEATURES</h1>
         </div>
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        {ourProductList.map((product, index) => (
+          {ourProductList.map((product, index) => (
             <div
               key={index}
-              className="main-card bg-black rounded-lg relative overflow-hidden group"
+              className="main-card bg-black rounded-lg relative overflow-hidden group shadow-lg"
             >
-              <span className="absolute inset-0 bg-indigo-600 translate-x-full transition-transform duration-500 group-hover:translate-x-0"></span>
-              <div className="relative p-6 space-y-6">
-                <h3 className="text-2xl text-white font-bold text-center">{product.title}</h3>
-                <p className="text-center text-white">{product.description}</p>
-                <div className="text-center">
-                  <div className="flex items-center justify-center text-white px-5 py-3 rounded-lg space-x-2 ">
-                    <span className="font-semibold">See more</span>
+              <span className="absolute inset-0 bg-red-500 text-white translate-y-full transition-transform duration-500 group-hover:translate-y-0 group-hover:text-red-500"></span>
+              <div className="relative text-white hover:text-black p-6 flex flex-col justify-between h-full space-y-6">
+                <div className="space-y-4">
+                  <div className="flex justify-center">{product.icon}</div>
+                  <h3 className="text-xl sm:text-2xl font-bold text-center">{product.title}</h3>
+                  <p className="text-sm sm:text-base text-center">{product.description}</p>
+                </div>
+                <div className="text-center mt-auto mx-auto">
+                  <a
+                    href="#more-info"
+                    className="flex items-center justify-center px-5 py-3 bg-red-500 text-black rounded-lg font-semibold space-x-2 hover:bg-black hover:text-red-500 transition duration-300"
+                  >
+                    <span>See more</span>
                     <MdArrowForward />
-                  </div>
+                  </a>
                 </div>
               </div>
             </div>
           ))}
-
         </div>
       </div>
     </div>
-
   );
 }
 
