@@ -8,9 +8,21 @@ export default {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        kanit: ["Kanit", "sans-serif"],
+      },
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+      },
+      animation: {
+        'gradient-change': 'gradient-change 1s ease-in-out forwards',
+      },
+      keyframes: {
+        'gradient-change': {
+          '0%': { backgroundPosition: 'top' },
+          '100%': { backgroundPosition: 'bottom' },
+        },
       },
     },
   },
